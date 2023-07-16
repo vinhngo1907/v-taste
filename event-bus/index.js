@@ -3,13 +3,13 @@ const axios = require('axios');
 
 const app = express();
 
+const events = [];
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.post('/events', async (req, res) => {
+app.get("/events", async (req, res) => {
+    res.send(events)
+})
 
-});
-
-const { type, data } = req.body;
-
-app.listen(4003, () => console.log('Moderation listening on port 4003'));
+app.listen(4005, () => console.log('Event bus is listening on port 4005'));
