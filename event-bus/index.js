@@ -12,7 +12,7 @@ app.get("/events", (req, res) => {
     res.send(events);
 });
 
-app.post("events", (req, res) => {
+app.post("/events", (req, res) => {
     const event = req.body;
     events.push(event);
     axios.post('http://localhost:4000/events', event).catch((e) => console.log(e));
