@@ -17,4 +17,23 @@ type person struct {
 
 func main(){
 	name := "bill"
+	namePointer := &name
+
+	fmt.Println(&namePointer)
+	fmt.Println(name)
+	printPointer(namePointer)
+	fmt.Println(name)
+}
+
+func printPointer(namePointer *string){
+	(*namePointer) = "hej"
+	fmt.Println(&namePointer)
+}
+
+func (p *person) updateFirstName(newFirstName string){
+	(*p).firstName = newFirstName
+}
+
+func (p *person) print() {
+	fmt.Printf("\n%+v\n", p)
 }
