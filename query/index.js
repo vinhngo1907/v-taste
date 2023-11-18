@@ -8,6 +8,7 @@ app.use(cors());
 
 const posts = {};
 const handleEvents = (type, data) => {
+    console.log({type, data});
     if (type === "PostCreate") {
         const { id, title } = data;
         posts[id] = { id, title, comments: [] };
