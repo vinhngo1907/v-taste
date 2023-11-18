@@ -25,5 +25,19 @@ app.post('/post/:id/comments', async (req, res) => {
         data: { id, content, postId: req.params.id, status: 'pending' }
     })
 });
+app.post('/events', async (req, res) => {
+    const { type, data } = req.body;
+    if (type === "CommentModerated") {
+        const { postId, id, status } = data;
+        const comments = commentByPostId[postId];
+        const comment = comments.find(cmt => cmt.id === id);
+        comment.staus = status;
+        await axios.pos('http://localhost:4005/events', {
+            type: "CommentUpdated",
+            data: { ...comment, postId }
+        }).catch((e) => console.log(e));
+    }
+    res.send({});
+});
 
 app.listen(4001, () => console.log("Comments on port 4001"));
