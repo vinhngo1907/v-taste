@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: vinhngotrung/app
+    - image: vinhngo1999/app
       context: app
       docker:
         dockerfile: Dockerfile
@@ -16,7 +16,7 @@ build:
         manual:
           - dest: .
             src: 'src/**/*.js'
-    - image: vinhngotrung/comments
+    - image: vinhngo1999/comments
       context: comments
       docker:
         dockerfile: Dockerfile
@@ -24,7 +24,7 @@ build:
         manual:
           - dest: .
             src: '*.js'
-    - image: vinhngotrung/event-bus
+    - image: vinhngo1999/event-bus
       context: event-bus
       docker:
         dockerfile: Dockerfile
@@ -32,7 +32,7 @@ build:
         manual:
           - dest: .
             src: '*.js'
-    - image: vinhngotrung/moderation
+    - image: vinhngo1999/moderation
       context: moderation
       docker:
         dockerfile: Dockerfile
@@ -40,7 +40,7 @@ build:
         manual:
           - dest: .
             src: '*.js'
-    - image: vinhngotrung/posts
+    - image: vinhngo1999/posts
       context: posts
       docker:
         dockerfile: Dockerfile
@@ -48,7 +48,7 @@ build:
         manual:
           - dest: .
             src: '*.js'
-    - image: vinhngotrung/query
+    - image: vinhngo1999/query
       context: query
       docker:
         dockerfile: Dockerfile
