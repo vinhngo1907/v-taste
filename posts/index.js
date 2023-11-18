@@ -19,7 +19,7 @@ app.post("/posts/create", async (req, res) => {
     posts[id] = { id, title };
 
     try {
-        await axios.post("http://localhost:4005/events", { type: 'PostCreate', data: { id, title } });
+        await axios.post("http://event-bus-srv:4005/events", { type: 'PostCreate', data: { id, title } });
     } catch (error) {
         console.log(error);
     }
