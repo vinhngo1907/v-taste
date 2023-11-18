@@ -16,5 +16,5 @@ type person struct {
 }
 
 func main(){
-	
+	name := "bill"
 }
