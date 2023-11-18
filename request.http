@@ -1,2 +1,4 @@
 @commentUrl=http://localhost:4001
 @eventUrl=http://localhost:4005
+###
+GET {{commentUrl}}/ 
