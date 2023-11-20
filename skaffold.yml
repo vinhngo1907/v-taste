@@ -56,6 +56,6 @@ build:
         manual:
           - dest: .
             src: '*.js'
-kubeContext: your-context
-kubeconfigPath: .github/kubeconfig.yaml
+# kubeContext: v-taste-k8s
+# kubeconfigPath: .github/kubeconfig.yaml
     
