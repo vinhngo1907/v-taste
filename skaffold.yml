@@ -56,4 +56,6 @@ build:
         manual:
           - dest: .
             src: '*.js'
+kubeContext: your-context
+kubeconfigPath: .github/kubeconfig.yaml
     
