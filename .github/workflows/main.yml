@@ -13,12 +13,14 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Run Skaffold
+    - name: Set up Skaffold
       run: |
         curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
         chmod +x skaffold
         sudo mv skaffold /usr/local/bin/
-        skaffold run -f .github/workflows/skaffold.yml
+
+    - name: Run Skaffold
+      run: skaffold run
 
 
 # jobs:
